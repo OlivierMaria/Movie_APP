@@ -16,14 +16,15 @@ $(document).ready(function () {
         if (data.Response === "True") {
           data.Search.forEach((movie) => {
             result += `
-                  <div class="card" style="width: 18rem;" data-aos="zoom-in" data-imdbid="${movie.imdbID}">
-                    <img class="card-img-top" src="${movie.Poster}" alt="Movie Poster">
-                    <div class="card-body">
-                      <h5 class="card-title">${movie.Title}</h5>
-                      <button class="btn btn-primary read-more">Read more</button>
-                    </div>
-                  </div>
-                `;
+              <div class="card" style="width: 18rem;" data-aos="zoom-in" data-imdbid="${movie.imdbID}">
+                <img class="card-img-top" src="${movie.Poster}" alt="Movie Poster">
+                <div class="card-body">
+                  <h5 class="card-title">${movie.Title}</h5>
+                  <button class="btn btn-primary read-more d-inline-block">Read more</button>
+                  <a class="btn btn-secondary imdb-link d-inline-block" href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank">IMDB</a>
+                </div>
+              </div>
+            `;
           });
         } else {
           result = `<p>${data.Error}</p>`;
@@ -52,16 +53,16 @@ $(document).ready(function () {
       .then((data) => {
         console.log(data);
         const detailsHtml = `
-            <div class="details">
-              <ul>
-                <li><strong>Released:</strong> ${data.Released}</li>
-                <li><strong>Runtime:</strong> ${data.Runtime}</li>
-                <li><strong>Genre:</strong> ${data.Genre}</li>
-                <li><strong>Director:</strong> ${data.Director}</li>
-                <li><strong>Actors:</strong> ${data.Actors}</li>
-              </ul>
-            </div>
-          `;
+          <div class="details">
+            <ul>
+              <li><strong>Released:</strong> ${data.Released}</li>
+              <li><strong>Runtime:</strong> ${data.Runtime}</li>
+              <li><strong>Genre:</strong> ${data.Genre}</li>
+              <li><strong>Director:</strong> ${data.Director}</li>
+              <li><strong>Actors:</strong> ${data.Actors}</li>
+            </ul>
+          </div>
+        `;
         card.append(detailsHtml);
       })
       .catch((error) => console.log(error));

@@ -1,0 +1,39 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+    display: block;
+    margin-bottom: 20px;
+    width: 50%;
+    margin: 10px;
+    padding: 5px;
+    margin-right: 10px; /* ajouter cette ligne pour la marge */
+    margin-left: 10px; /* ajouter cette ligne pour la marge */
+  }
+  .card-img-top {
+    max-height: 300px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  #movie {
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    padding: 5px;
+    margin-top: 25px;
+  }
+  .form-group.text-center {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-control {
+    text-align: center;
+  }
+
+  #movie::placeholder {
+    text-align: center;
+    letter-spacing: 4px;
+  }
